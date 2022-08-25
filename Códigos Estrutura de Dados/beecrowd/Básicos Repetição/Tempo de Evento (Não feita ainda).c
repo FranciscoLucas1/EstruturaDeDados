@@ -1,24 +1,20 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int main(int argc, char const *argv[])
 {
     
-    
-    int dia1, hh1, mm1, ss1;
-    int dia2, hh2, mm2, ss2;
-    
-    printf("Dia ");
-    scanf("%i : %i : %i ", hh1, mm1, ss1);
-    printf("Dia ");
-    scanf("%i : %i : %i ", hh2, mm2, ss2);
+    int dia, hora, min, seg;
+    int diaf, horaf, minf, segf;
+    int diaR, horaR, minR, segR;
+    scanf("%i %i %i %i", dia, hora , min, seg);
+    scanf("%i %i %i %i", diaf, horaf , minf, segf);
 
 
 
-
-
-
-
+    printf("%i dia(s)", diaR);
+    printf("%i hora(s)", horaR);
+    printf("%i minuto(s)", minR);
+    printf("%i segundo(s)", segR);
 
 
 
