@@ -70,11 +70,17 @@ void imprimir(Fila *f)
     printf("\n");
 }
 
+void retornarPosi(Fila *f, int fch)
+{
+    int c = 0;
+    no *aux;
+    for (aux = f->inicio; aux != NULL; aux = aux->prox)
+    {
+        c++;
+    }
 
-void retornarPosi(Fila *f, int fch){
-
+    printf("%i está na posição %i, há %i na sua frente", fch, c, c-1);
 }
-
 
 void menu()
 {
@@ -82,7 +88,7 @@ void menu()
     printf("1 - Inserir pessoas na fila\n");
     printf("2 - Remover pessoa da fila\n");
     printf("3 - Exibir a fila completa\n");
-    printf("4 - Retornar a posição na fila\n")
+    printf("4 - Retornar a posição na fila\n");
     printf("0 -  Sair\n");
 }
 
@@ -93,8 +99,10 @@ int main(int argc, char const *argv[])
 
     int opc = -1;
     int x = 0;
+    int y = 0;
 
-    comeco: menu();
+comeco:
+    menu();
     printf("Digite uma opção: ");
     scanf("%i", &opc);
 
@@ -112,9 +120,12 @@ int main(int argc, char const *argv[])
         imprimir(A);
         goto comeco;
     case 4:
+        printf("Digite o número de uma ficha para exibir sua posição.\n");
+        scanf("%i", &y);
+        retornarPosi(A, y);
         goto comeco; 
     case 0:
-        break; 
+        break;
     default:
         printf("Opção inválida, encerrando programa\n");
         break;
